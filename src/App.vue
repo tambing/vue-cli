@@ -5,7 +5,14 @@
   <br><br>
   <button @click="toggleModal"  @keydown.esc="showModal = false">Show Modal</button>
   <div v-if="showModal">
-    <Modal :header="header" content="Modal Content" theme="sale" @close="toggleModal"/>
+    <Modal :header="header" content="Modal Content" theme="sale" @close="toggleModal">
+      <template v-slot:links>
+        <a href="#">Sign In</a>
+        <a href="#">Sign Up</a>
+      </template>
+      <h1>Header Modal</h1>
+      <p>Content Modal</p>
+    </Modal>
 
   </div>
 </template>
